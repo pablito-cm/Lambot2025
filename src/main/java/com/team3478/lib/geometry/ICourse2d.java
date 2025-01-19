@@ -1,0 +1,14 @@
+package com.team3478.lib.geometry;
+
+///////////////////////////////////////////////////////////////////////////////
+// Description: -
+// Authors: -
+// Notes:
+//  - Obtenido de: https://github.com/Team254/FRC-2023-Public
+///////////////////////////////////////////////////////////////////////////////
+
+import java.util.Optional;
+
+public interface ICourse2d<S> {
+  Optional<Rotation2d> getCourse();
+}

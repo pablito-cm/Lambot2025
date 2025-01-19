@@ -1,0 +1,12 @@
+package com.team3478.lib.geometry;
+
+///////////////////////////////////////////////////////////////////////////////
+// Description: -
+// Authors: -
+// Notes:
+//  - Obtenido de: https://github.com/Team254/FRC-2023-Public
+///////////////////////////////////////////////////////////////////////////////
+
+public interface ITranslation2d<S> extends State<S> {
+  Translation2d getTranslation();
+}
