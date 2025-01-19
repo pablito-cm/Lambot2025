@@ -42,7 +42,7 @@ public class ControlBoard {
     return mDriverControlBoard.getAButton();
   }
 
-  public boolean feederAlignAction() {
+  public boolean down() {
     return mDriverControlBoard.getXButton();
   }
 

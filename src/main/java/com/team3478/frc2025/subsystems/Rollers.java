@@ -1,9 +1,9 @@
 package com.team3478.frc2025.subsystems;
 import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-import com.team3478.frc2025.SubsystemManager;
+import lambotlogs.IAutoLogger;
 
-public class Rollers {
+public class Rollers extends Subsystem implements IAutoLogger{
 
     private static Rollers mInstance;
 
@@ -44,4 +44,9 @@ public class Rollers {
         MotorRoller_1.set(TalonSRXControlMode.PercentOutput, speed);
         MotorRoller_2.set(TalonSRXControlMode.PercentOutput, -speed);
     }
+
+     // Funcion para validar el subsistema
+  public boolean checkSystem() {
+    return true;
+  }
 }

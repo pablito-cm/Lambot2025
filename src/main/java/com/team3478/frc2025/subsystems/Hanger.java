@@ -1,8 +1,8 @@
 package com.team3478.frc2025.subsystems;
 import com.ctre.phoenix6.hardware.TalonFX;
-import com.team3478.frc2025.SubsystemManager;
+import lambotlogs.IAutoLogger;
 
-public class Hanger {
+public class Hanger extends Subsystem implements IAutoLogger {
 
     private static Hanger mInstance;
 
@@ -20,9 +20,8 @@ public class Hanger {
     double speed;
 
     public Hanger(){
-    MotorHanger = new TalonFX(9);
-
-    speed = 0;
+        MotorHanger = new TalonFX(9);
+        speed = 0;
     }
 
     public void stop(){
@@ -30,13 +29,21 @@ public class Hanger {
     }
 
 
-    public void Subir(boolean getAButton){
+    public void Subir(boolean getAButton, boolean getXButton){
         if(getAButton){
-            speed = .5;
+            speed = 0.5;
+        }
+        else if(getXButton){
+            speed = -0.5;
         }
         else{
             speed = 0;
         }
         MotorHanger.set(speed);
     }
+
+      // Funcion para validar el subsistema
+  public boolean checkSystem() {
+    return true;
+  }
 }

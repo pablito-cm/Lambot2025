@@ -82,8 +82,8 @@ public class Robot extends TimedRobot {
       // CameraServer.startAutomaticCapture(); //se inicia la captura de la USB camera
 
       // Agrega la lista de subsystemas al subsystemManager
-      mSubsystemManager.setSubsystems(mDrive, mRollers, mHanger, mStateSystem);
-///nose
+      mSubsystemManager.setSubsystems(mDrive, mStateSystem, mHanger, mRollers);
+
       // Agregamos los sources al logger de los cuales sacar informacion
       logger.addSources(mDrive, mRollers, mHanger, mStateSystem);
 
@@ -173,8 +173,6 @@ public class Robot extends TimedRobot {
       LoggerManager.logfromlogger(LogLevel.ERROR, t.getMessage());
       throw t;
     }
-      mRollers.activar(isEnabled());
-      mHanger.Subir();
   }
 
   // Funcion que se corre cuando inicia el ciclo de test
@@ -248,14 +246,12 @@ public class Robot extends TimedRobot {
           mControlBoard.driveYVelocity(), // Stick left y
           mControlBoard.driveTurnVelocity() // Stick right x
           );
+      mRollers.activar(mControlBoard.activate());
+      mHanger.Subir(mControlBoard.up(), mControlBoard.down());
     } catch (Throwable t) {
       LoggerManager.logfromlogger(LogLevel.ERROR, t.getMessage());
       throw t;
     }
-
-      mRollers.activar(mControlBoard.activate());
-
-      mHanger.Subir(mControlBoard.up());
   }
 
   @Override
