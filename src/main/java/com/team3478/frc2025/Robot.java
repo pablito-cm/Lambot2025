@@ -83,7 +83,7 @@ public class Robot extends TimedRobot {
 
       // Agrega la lista de subsystemas al subsystemManager
       mSubsystemManager.setSubsystems(mDrive, mRollers, mHanger, mStateSystem);
-
+///nose
       // Agregamos los sources al logger de los cuales sacar informacion
       logger.addSources(mDrive, mRollers, mHanger, mStateSystem);
 
